@@ -6,7 +6,41 @@ on:
          - main
 
 jobs:
-  deploy-to-server:
+  deploy-to-server-01:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Display the code
+        run: ls -la
+
+      - name: Display additional info
+        run: |
+          ls -la
+          hostnamectl
+
+
+  deploy-to-server-02:
+    needs: deploy-to-server-01
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Display the code
+        run: ls -la
+
+      - name: Display additional info
+        run: |
+          ls -la
+          hostnamectl
+
+
+  deploy-to-server-03:
+    needs: deploy-to-server-02
     runs-on: ubuntu-latest
 
     steps:

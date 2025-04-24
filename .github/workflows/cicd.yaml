@@ -23,7 +23,7 @@ jobs:
 
 
   deploy-to-server-02:
-    needs: deploy-to-server-01
+    needs: deploy-to-server-03
     runs-on: ubuntu-latest
 
     steps:
@@ -40,7 +40,7 @@ jobs:
 
 
   deploy-to-server-03:
-    needs: deploy-to-server-02
+    needs: deploy-to-server-01
     runs-on: ubuntu-latest
 
     steps:
